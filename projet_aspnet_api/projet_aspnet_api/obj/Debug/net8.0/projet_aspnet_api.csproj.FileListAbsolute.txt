@@ -170,3 +170,4 @@ C:\Projet\projet_aspNet\projet_aspnet_api\projet_aspnet_api\obj\Debug\net8.0\ref
 C:\Projet\projet_aspNet\projet_aspnet_api\projet_aspnet_api\obj\Debug\net8.0\projet_aspnet_api.pdb
 C:\Projet\projet_aspNet\projet_aspnet_api\projet_aspnet_api\obj\Debug\net8.0\projet_aspnet_api.genruntimeconfig.cache
 C:\Projet\projet_aspNet\projet_aspnet_api\projet_aspnet_api\obj\Debug\net8.0\ref\projet_aspnet_api.dll
+C:\Projet\projet_aspNet\projet_aspnet_api\projet_aspnet_api\obj\Debug\net8.0\projet_aspnet_api.sourcelink.json

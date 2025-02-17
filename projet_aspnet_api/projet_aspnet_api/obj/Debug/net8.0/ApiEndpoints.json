@@ -2,14 +2,30 @@
   {
     "ContainingType": "projet_aspnet_api.Controllers.UsersController",
     "Method": "GetUser",
-    "RelativePath": "api/Users/{id}",
+    "RelativePath": "{nom}",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
     "Parameters": [
       {
-        "Name": "id",
-        "Type": "System.Int32",
+        "Name": "nom",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "projet_aspnet_api.Controllers.UsersController",
+    "Method": "Put",
+    "RelativePath": "AddUser",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "newUser",
+        "Type": "projet_aspnet_api.Users",
         "IsRequired": true
       }
     ],
@@ -18,7 +34,7 @@
   {
     "ContainingType": "projet_aspnet_api.Controllers.UsersController",
     "Method": "Login",
-    "RelativePath": "api/Users/login",
+    "RelativePath": "Connexion",
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
@@ -26,6 +42,38 @@
       {
         "Name": "loginUser",
         "Type": "Loginmodele",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "projet_aspnet_api.Controllers.UsersController",
+    "Method": "CreateUser",
+    "RelativePath": "CreeUser",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "newUser",
+        "Type": "projet_aspnet_api.Users",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "projet_aspnet_api.Controllers.UsersController",
+    "Method": "Delete",
+    "RelativePath": "DeleteUser/{nom}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "nom",
+        "Type": "System.String",
         "IsRequired": true
       }
     ],
