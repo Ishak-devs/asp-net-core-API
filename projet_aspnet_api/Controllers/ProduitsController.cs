@@ -68,5 +68,3 @@ namespace projet_aspnet_api.Controllers
     }
 
 }
-
-
