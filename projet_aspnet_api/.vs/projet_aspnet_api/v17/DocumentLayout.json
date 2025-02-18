@@ -1,0 +1,50 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Projet\\projet_aspNet\\projet_aspnet_api\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|ViewDataWindow_MSSQL__/DESKTOP_TNS69RM_MSSQLSERVER01/API_DB/True/SqlTable/dbo.Users.sql||{0058A1F7-65F3-4DB9-B3D0-CA7E64DD73CD}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5C7DC230-0145-4D05-B036-3740D6E38E5A}|projet_aspnet_api\\projet_aspnet_api.csproj|c:\\projet\\projet_aspnet\\projet_aspnet_api\\projet_aspnet_api\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5C7DC230-0145-4D05-B036-3740D6E38E5A}|projet_aspnet_api\\projet_aspnet_api.csproj|solutionrelative:projet_aspnet_api\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "dbo.Users [Donn\u00E9es]",
+              "DocumentMoniker": "ViewDataWindow_MSSQL__/DESKTOP_TNS69RM_MSSQLSERVER01/API_DB/True/SqlTable/dbo.Users.sql",
+              "ToolTip": "dbo.Users [Donn\u00E9es]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000826|",
+              "WhenOpened": "2025-02-18T06:15:29.992Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "UserController.cs",
+              "DocumentMoniker": "C:\\Projet\\projet_aspNet\\projet_aspnet_api\\projet_aspnet_api\\Controllers\\UserController.cs",
+              "RelativeDocumentMoniker": "projet_aspnet_api\\Controllers\\UserController.cs",
+              "ToolTip": "C:\\Projet\\projet_aspNet\\projet_aspnet_api\\projet_aspnet_api\\Controllers\\UserController.cs",
+              "RelativeToolTip": "projet_aspnet_api\\Controllers\\UserController.cs",
+              "ViewState": "AgIAAFgAAAAAAAAAAAAswHIAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-18T06:02:18.992Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,37 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Projet\\projet_aspNet\\projet_aspnet_api\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{5C7DC230-0145-4D05-B036-3740D6E38E5A}|projet_aspnet_api\\projet_aspnet_api.csproj|c:\\projet\\projet_aspnet\\projet_aspnet_api\\projet_aspnet_api\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5C7DC230-0145-4D05-B036-3740D6E38E5A}|projet_aspnet_api\\projet_aspnet_api.csproj|solutionrelative:projet_aspnet_api\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "UserController.cs",
+              "DocumentMoniker": "C:\\Projet\\projet_aspNet\\projet_aspnet_api\\projet_aspnet_api\\Controllers\\UserController.cs",
+              "RelativeDocumentMoniker": "projet_aspnet_api\\Controllers\\UserController.cs",
+              "ToolTip": "C:\\Projet\\projet_aspNet\\projet_aspnet_api\\projet_aspnet_api\\Controllers\\UserController.cs",
+              "RelativeToolTip": "projet_aspnet_api\\Controllers\\UserController.cs",
+              "ViewState": "AgIAAFMAAAAAAAAAAAAswHIAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-18T06:02:18.992Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
