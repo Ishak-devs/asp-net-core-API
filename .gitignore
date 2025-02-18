@@ -1,0 +1,28 @@
+# Fichiers et répertoires spécifiques à Visual Studio
+.vs/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# Build directories
+bin/
+obj/
+
+# Fichiers de configuration
+appsettings*.json
+
+# Logs
+*.log
+
+# Fichiers spécifiques à l'environnement
+.env
+
+# Packages
+*.nupkg
+*.snupkg
+
+# Fichiers spécifiques à l'IDE
+*.csproj.user
+*.csproj.nuget.g.props
+*.csproj.nuget.g.targets
