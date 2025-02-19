@@ -5,27 +5,34 @@ using projet_aspnet_api;
 
 var builder = WebApplication.CreateBuilder(args);
 
-
+//Ajout de service controller dans le conteneur
 builder.Services.AddControllers();
-builder.Services.AddDbContext<Context>(options =>
+
+//ajout du service context dasn le conteneur
+builder.Services.AddDbContext<Context>
+    (options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("MaChaîneDeConnexion")));
 
-builder.Services.AddDistributedMemoryCache();
+//Définir le schéma d'authentification basé sur les cookies
 builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
 
+    
     .AddCookie(options =>
     {
         options.LoginPath = "/api/Compte/Login"; 
         options.AccessDeniedPath = "/api/Compte/AccessDenied"; 
     });
 
-builder.Services.AddSession(options =>
-{
-    options.IdleTimeout = TimeSpan.FromMinutes(30);
-    options.Cookie.HttpOnly = true;
-    options.Cookie.IsEssential = true;
-});
+//builder.Services.AddDistributedMemoryCache();
+//builder.Services.AddSession(options =>
+//{
+//    options.IdleTimeout = TimeSpan.FromMinutes(30);
+//    options.Cookie.HttpOnly = true;
+//    options.Cookie.IsEssential = true;
+//});
 
+
+//Définir le swagger
 builder.Services.AddSwaggerGen(c =>
 {
     c.SwaggerDoc("v1", new OpenApiInfo { Title = "My API", Version = "v1" });
@@ -33,7 +40,7 @@ builder.Services.AddSwaggerGen(c =>
 
 var app = builder.Build();
 
-// Configurer le pipeline HTTP
+
 if (app.Environment.IsDevelopment())
 {
     app.UseDeveloperExceptionPage();
@@ -46,7 +53,9 @@ app.UseStaticFiles();
 
 app.UseRouting();
 
-app.UseSession(); 
+//app.UseSession();
+
+app.UseAuthentication();
 
 app.UseAuthorization();
 

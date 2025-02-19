@@ -20,7 +20,7 @@ namespace projet_aspnet_api.Controllers
             return Ok(produits);
         }
         [HttpPost("Rechercher un produit")]
-        public IActionResult Produits([FromBody] Produitsmodele produitsmodele)
+        public IActionResult Produits([FromBody] Produits produitsmodele)
         {
             var produit = _context.Produits.SingleOrDefault(u => u.Nom == produitsmodele.Nom);
             if (produit == null)

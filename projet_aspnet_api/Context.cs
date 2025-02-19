@@ -1,5 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 
+
 namespace projet_aspnet_api
 {
     public class Context : DbContext
@@ -10,20 +11,7 @@ namespace projet_aspnet_api
         }
 
         public DbSet<Produits> Produits { get; set; }
-        public DbSet<Users> Users { get; set; }
+        public DbSet<User> Users { get; set; }
     }
 
-    public class Produits
-    {
-        public int Id { get; set; }
-        public string Nom { get; set; }
-    }
-
-    public class Users
-    {
-        public int Id { get; set; }
-        public string Nom { get; set; }
-        public string Password { get; set; }
-        public string role { get; set; }
-    }
 }

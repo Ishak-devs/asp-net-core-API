@@ -14,7 +14,7 @@ namespace projet_aspnet_api.Controllers
         }
 
         [HttpPost("Connexion")]
-        public IActionResult Login([FromBody] Loginmodele loginUser)
+        public IActionResult Login([FromBody] User loginUser)
         {
             var user = _context.Users.SingleOrDefault(u => u.Nom == loginUser.Nom && u.Password == loginUser.Password);
             if (user == null)
@@ -25,7 +25,7 @@ namespace projet_aspnet_api.Controllers
         }
 
         [HttpPost("Modifier un utilisateur")]
-        public IActionResult Edit([FromBody] Users updatedUser)
+        public IActionResult Edit([FromBody] User updatedUser)
         {
             var user = _context.Users.SingleOrDefault(u => u.Nom == updatedUser.Nom);
             if (user == null)
@@ -41,7 +41,7 @@ namespace projet_aspnet_api.Controllers
         }
 
         [HttpPut("AddUser")]
-        public IActionResult Put([FromBody] Users newUser)
+        public IActionResult Put([FromBody] User newUser)
         {
             _context.Users.Add(newUser);
             _context.SaveChanges();
