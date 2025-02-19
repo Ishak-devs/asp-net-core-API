@@ -24,5 +24,6 @@ namespace projet_aspnet_api
         public int Id { get; set; }
         public string Nom { get; set; }
         public string Password { get; set; }
+        public string role { get; set; }
     }
 }
