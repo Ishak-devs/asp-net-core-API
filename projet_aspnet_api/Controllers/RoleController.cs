@@ -18,8 +18,7 @@ public class RoleController : ControllerBase
     }
 
     [AllowAnonymous] 
-    [HttpPost("login")]
-    [Authorize(Roles = "client")]
+    [HttpPost("login")] 
     public IActionResult Login(string username, string password)
     {
         var user = _context.Users.FirstOrDefault(u => u.Nom == username && u.Password == password);
@@ -32,7 +31,7 @@ public class RoleController : ControllerBase
         var claims = new List<Claim>
         {
             new Claim(ClaimTypes.Name, user.Nom),
-            new Claim(ClaimTypes.Role, user.role) // Ajout du rôle dans les claims
+            new Claim(ClaimTypes.Role, user.role) 
         };
 
         var claimsIdentity = new ClaimsIdentity(claims, CookieAuthenticationDefaults.AuthenticationScheme);
