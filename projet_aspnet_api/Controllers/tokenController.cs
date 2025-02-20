@@ -23,7 +23,7 @@ public class TokenController : ControllerBase
             var claims = new[]
             {
             new Claim(ClaimTypes.Name, request.Nom),
-            new Claim(ClaimTypes.Role, "admin") // Rôle de l'utilisateur
+            new Claim(ClaimTypes.Role, "Admin") // Rôle de l'utilisateur
         };
 
             var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_configuration["Jwt:Key"]));

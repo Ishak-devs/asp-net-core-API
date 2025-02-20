@@ -17,7 +17,7 @@ public class RoleController : ControllerBase
     }
 
     [HttpPost("login")]
-    [Authorize("admin")]
+    [Authorize("Admin")]
     public IActionResult Login([FromBody] User request)
     {
         // Simuler une vérification d'utilisateur

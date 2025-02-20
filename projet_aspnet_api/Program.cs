@@ -90,8 +90,6 @@ builder.Services.AddAuthorization(options =>
 });
 
 
-//jwt
-
 //ajouter un schema d'authentification jwt
 builder.Services.AddAuthentication(options =>
 {
