@@ -2,58 +2,51 @@
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Mvc;
 using System.Security.Claims;
-//using System.Threading.Tasks;
-//using System.Linq;
-//using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.Authorization;
 using projet_aspnet_api;
-using System.Data;
 
 [ApiController]
 [Route("api/[controller]")]
+[Authorize(Roles = "admin")] 
 public class RoleController : ControllerBase
 {
     private readonly Context _context;
 
-    public RoleController(Context Context)
+    public RoleController(Context context)
     {
-        _context = Context;
+        _context = context;
     }
 
-    [HttpPost]
+    [AllowAnonymous] 
+    [HttpPost("login")]
+    [Authorize(Roles = "client")]
     public IActionResult Login(string username, string password)
     {
         var user = _context.Users.FirstOrDefault(u => u.Nom == username && u.Password == password);
         if (user == null)
         {
-            return Unauthorized(new { message = "Invalid credentials" });
+            return Unauthorized(new { message = "Vous n'avez pas le role permettant l'accès" });
         }
 
         // Création d'un objet claims
-        var Myclaims = new List<Claim>
+        var claims = new List<Claim>
         {
-            new Claim(ClaimTypes.Name, username),
-            new Claim("Role", user.role)
+            new Claim(ClaimTypes.Name, user.Nom),
+            new Claim(ClaimTypes.Role, user.role) // Ajout du rôle dans les claims
         };
 
-        if (user.role != "admin")
-        {
-            return Unauthorized(new { message = "Vous n'êtes pas autorisé à accéder" });
-        }
+        var claimsIdentity = new ClaimsIdentity(claims, CookieAuthenticationDefaults.AuthenticationScheme);
 
-        // Identité claim regroupant l'ensemble des informations
-        var claimsIdentity = new ClaimsIdentity(Myclaims, CookieAuthenticationDefaults.AuthenticationScheme);
+        var claimsPrincipal = new ClaimsPrincipal(claimsIdentity);
 
-        // Création d'un cookie du schéma d'authentification
-        HttpContext.SignInAsync(CookieAuthenticationDefaults.AuthenticationScheme, new ClaimsPrincipal(claimsIdentity));
+        HttpContext.SignInAsync(CookieAuthenticationDefaults.AuthenticationScheme, claimsPrincipal);
 
-        // Retourne un message connexion réussie
         return Ok(new { message = $"{user.role} logged in successfully", role = user.role });
     }
 
     [HttpPost("logout")]
     public async Task<IActionResult> Logout()
     {
-        // Effacer le cookie
         await HttpContext.SignOutAsync(CookieAuthenticationDefaults.AuthenticationScheme);
         return Ok("Logged out successfully");
     }
