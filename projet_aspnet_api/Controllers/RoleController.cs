@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.IdentityModel.Tokens;
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
@@ -6,16 +7,17 @@ using System.Text;
 
 [ApiController]
 [Route("api/[controller]")]
-public class AuthController : ControllerBase
+public class RoleController : ControllerBase
 {
     private readonly IConfiguration _configuration;
 
-    public AuthController(IConfiguration configuration)
+    public RoleController(IConfiguration configuration)
     {
         _configuration = configuration;
     }
 
     [HttpPost("login")]
+    [Authorize("admin")]
     public IActionResult Login([FromBody] User request)
     {
         // Simuler une vérification d'utilisateur
@@ -26,21 +28,9 @@ public class AuthController : ControllerBase
             new Claim(ClaimTypes.Name, request.Nom),
             new Claim(ClaimTypes.Role, "Admin") // Rôle de l'utilisateur
         };
+            return Ok("ok");
 
-            var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_configuration["Jwt:Key"]));
-            var creds = new SigningCredentials(key, SecurityAlgorithms.HmacSha256);
-
-            var token = new JwtSecurityToken(
-                issuer: _configuration["Jwt:Issuer"],
-                audience: _configuration["Jwt:Audience"],
-                claims: claims,
-                expires: DateTime.Now.AddMinutes(30),
-                signingCredentials: creds
-            );
-
-            return Ok(new { token = new JwtSecurityTokenHandler().WriteToken(token) });
         }
-
-        return Unauthorized();
+        return Unauthorized("acces refusé");
     }
 }
