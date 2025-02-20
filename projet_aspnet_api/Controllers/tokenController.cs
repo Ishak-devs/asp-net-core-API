@@ -5,12 +5,11 @@ using System.Security.Claims;
 using System.Text;
 
 [ApiController]
-[Route("api/[controller]")]
-public class AuthController : ControllerBase
+public class TokenController : ControllerBase
 {
     private readonly IConfiguration _configuration;
 
-    public AuthController(IConfiguration configuration)
+    public  TokenController(IConfiguration configuration)
     {
         _configuration = configuration;
     }

@@ -1,4 +1,6 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Authorization.Infrastructure;
+using Microsoft.AspNetCore.Mvc;
 using System.Linq; 
 
 namespace projet_aspnet_api.Controllers
@@ -14,6 +16,7 @@ namespace projet_aspnet_api.Controllers
         }
 
         [HttpPost("Connexion")]
+        [Authorize(Roles = "admin")]
         public IActionResult Login([FromBody] User loginUser)
         {
             var user = _context.Users.SingleOrDefault(u => u.Nom == loginUser.Nom && u.Password == loginUser.Password);
@@ -25,6 +28,7 @@ namespace projet_aspnet_api.Controllers
         }
 
         [HttpPost("Modifier un utilisateur")]
+        [Authorize()]
         public IActionResult Edit([FromBody] User updatedUser)
         {
             var user = _context.Users.SingleOrDefault(u => u.Nom == updatedUser.Nom);
@@ -41,6 +45,7 @@ namespace projet_aspnet_api.Controllers
         }
 
         [HttpPut("AddUser")]
+        [Authorize(Roles = "admin")]
         public IActionResult Put([FromBody] User newUser)
         {
             _context.Users.Add(newUser);
